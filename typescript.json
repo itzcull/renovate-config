@@ -1,6 +1,7 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["base.json"],
+	"extends": ["./base.json"],
+	"dependencyDashboard": true,
 	"packageRules": [
 		{
 			"matchUpdateTypes": ["patch"],
