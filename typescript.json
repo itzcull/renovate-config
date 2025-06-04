@@ -10,14 +10,7 @@
 		},
 		{
 			"matchUpdateTypes": ["minor"],
-			"groupName": "all confident minor dependencies",
-			"automerge": true,
-			"matchConfidence": "very high"
-		},
-		{
-			"matchUpdateTypes": ["minor"],
 			"groupName": "all suspect minor dependencies",
-			"matchConfidence": "low",
 			"automerge": false
 		},
 		{
