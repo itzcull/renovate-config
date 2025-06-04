@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["./base.json"],
+	"extends": ["github>itzcull/renovate-config:base"],
 	"dependencyDashboard": true,
 	"packageRules": [
 		{
