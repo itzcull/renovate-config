@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboarding": false,
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "automerge": true,
   "automergeType": "pr",
   "automergeStrategy": "merge",
@@ -9,28 +11,53 @@
   "automergeSchedule": [
     "at any time"
   ],
-  "schedule": ["0 9 * * *"],
-  "assignees": ["itzcull"],
+  "schedule": [
+    "0 9 * * *"
+  ],
+  "assignees": [
+    "itzcull"
+  ],
   "separateMultipleMinor": false,
   "separateMinorPatch": false,
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "merge",
-      "groupName": "all patch dependencies"
+      "groupName": "all patch & minor dev dependencies"
     },
     {
-      "matchUpdateTypes": ["minor"],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "merge",
+      "groupName": "all patch app dependencies"
+    },
+    {
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "automerge": false,
-      "groupName": "all minor dependencies"
+      "groupName": "all minor app dependencies"
     },
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false,
       "groupName": "all major dependencies"
     }
   ]
 }
-
