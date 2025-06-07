@@ -6,9 +6,9 @@
   "automergeType": "pr",
   "automergeStrategy": "merge",
   "platformAutomerge": true,
-	"automergeSchedule": [
-		"at any time"
-	],
+  "automergeSchedule": [
+    "at any time"
+  ],
   "schedule": ["0 9 * * *"],
   "assignees": ["itzcull"],
   "packageRules": [
@@ -16,7 +16,18 @@
       "matchUpdateTypes": ["patch"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "merge"
+      "automergeStrategy": "merge",
+      "groupName": "all patch dependencies"
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "automerge": false,
+      "groupName": "all minor dependencies"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "groupName": "all major dependencies"
     }
   ]
 }
