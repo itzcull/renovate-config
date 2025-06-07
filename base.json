@@ -11,6 +11,8 @@
   ],
   "schedule": ["0 9 * * *"],
   "assignees": ["itzcull"],
+  "separateMultipleMinor": false,
+  "separateMinorPatch": false,
   "packageRules": [
     {
       "matchUpdateTypes": ["patch"],
