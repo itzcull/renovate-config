@@ -2,24 +2,8 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": ["github>itzcull/renovate-config:base"],
 	"dependencyDashboard": true,
-	"packageRules": [
-		{
-			"matchUpdateTypes": ["patch"],
-			"groupName": "all patch dependencies",
-			"automerge": true
-		},
-		{
-			"matchUpdateTypes": ["minor"],
-			"groupName": "all suspect minor dependencies",
-			"automerge": false
-		},
-		{
-			"matchUpdateTypes": ["major"],
-			"groupName": "major dependencies",
-			"automerge": false
-		}
-	],
 	"separateMultipleMajor": true,
 	"separateMinorPatch": true,
 	"separateMultipleMinor": true
 }
+

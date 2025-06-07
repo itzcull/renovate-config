@@ -2,10 +2,33 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboarding": false,
   "extends": ["config:recommended"],
-	"automergeSchedule": [
-		"at any time"
-	],
+  "automerge": true,
+  "automergeType": "pr",
+  "automergeStrategy": "merge",
+  "platformAutomerge": true,
+  "automergeSchedule": [
+    "at any time"
+  ],
   "schedule": ["0 9 * * *"],
-  "assignees": ["itzcull"]
+  "assignees": ["itzcull"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "merge",
+      "groupName": "all patch dependencies"
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "automerge": false,
+      "groupName": "all minor dependencies"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "groupName": "all major dependencies"
+    }
+  ]
 }
 
