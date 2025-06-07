@@ -1,12 +1,18 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>itzcull/renovate-config:base"],
+	"extends": ["github>itzcull/renovate-presets:base"],
 	"dependencyDashboard": true,
+	"automerge": true,
+	"automergeType": "pr",
+	"automergeStrategy": "merge",
+	"platformAutomerge": true,
 	"packageRules": [
 		{
 			"matchUpdateTypes": ["patch"],
 			"groupName": "all patch dependencies",
-			"automerge": true
+			"automerge": true,
+			"automergeType": "pr",
+			"automergeStrategy": "merge"
 		},
 		{
 			"matchUpdateTypes": ["minor"],
@@ -23,3 +29,4 @@
 	"separateMinorPatch": true,
 	"separateMultipleMinor": true
 }
+

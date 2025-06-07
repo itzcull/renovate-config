@@ -1,16 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "onboarding": false,
-  "extends": ["config:recommended"],
+  "description": "Automerge configuration for patch updates",
   "automerge": true,
   "automergeType": "pr",
   "automergeStrategy": "merge",
   "platformAutomerge": true,
-	"automergeSchedule": [
-		"at any time"
-	],
-  "schedule": ["0 9 * * *"],
-  "assignees": ["itzcull"],
   "packageRules": [
     {
       "matchUpdateTypes": ["patch"],
