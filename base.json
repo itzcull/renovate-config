@@ -14,9 +14,6 @@
   "schedule": [
     "0 9 * * *"
   ],
-  "assignees": [
-    "itzcull"
-  ],
   "separateMultipleMinor": false,
   "separateMinorPatch": false,
   "packageRules": [
@@ -49,6 +46,7 @@
       "matchUpdateTypes": [
         "minor"
       ],
+      "minimumReleaseAge": "7 days",
       "automerge": false,
       "groupName": "all minor app dependencies"
     },
@@ -56,6 +54,7 @@
       "matchUpdateTypes": [
         "major"
       ],
+      "minimumReleaseAge": "7 days",
       "automerge": false,
       "groupName": "all major dependencies"
     }
