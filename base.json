@@ -18,7 +18,8 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
-      "groupName": "all patch & minor dev dependencies"
+      "groupName": "all patch & minor dev dependencies",
+      "matchConfidence": "high"
     },
     {
       "enabled": true,
@@ -27,7 +28,8 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
-      "groupName": "all patch app dependencies"
+      "groupName": "all patch app dependencies",
+      "matchConfidence": "high"
     },
     {
       "enabled": true,
@@ -35,7 +37,8 @@
       "matchUpdateTypes": ["minor"],
       "minimumReleaseAge": "7 days",
       "automerge": false,
-      "groupName": "all minor app dependencies"
+      "groupName": "all minor app dependencies",
+      "matchConfidence": "high"
     },
     {
       "enabled": true,
@@ -43,7 +46,8 @@
       "matchUpdateTypes": ["major"],
       "minimumReleaseAge": "14 days",
       "automerge": false,
-      "groupName": "all major dev dependencies"
+      "groupName": "all major dev dependencies",
+      "matchConfidence": "high"
     },
     {
       "enabled": true,
@@ -51,7 +55,8 @@
       "matchUpdateTypes": ["major"],
       "minimumReleaseAge": "1 month",
       "automerge": false,
-      "groupName": "all major app dependencies"
+      "groupName": "all major app dependencies",
+      "matchConfidence": "high"
     }
   ]
 }
