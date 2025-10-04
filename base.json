@@ -58,5 +58,6 @@
       "groupName": "all major app dependencies",
       "matchConfidence": "high"
     }
-  ]
+  ],
+  "timezone": "Australia/Melbourne"
 }
