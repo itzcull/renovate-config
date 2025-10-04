@@ -1,62 +1,57 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboarding": false,
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended"],
   "automerge": true,
   "automergeType": "pr",
-  "automergeStrategy": "merge",
+  "automergeStrategy": "squash",
   "platformAutomerge": true,
-  "automergeSchedule": [
-    "at any time"
-  ],
-  "schedule": [
-    "0 9 * * *"
-  ],
-  "separateMultipleMinor": false,
-  "separateMinorPatch": false,
+  "automergeSchedule": ["at any time"],
+  "schedule": ["at any time"],
+  "separateMultipleMinor": true,
+  "separateMinorPatch": true,
   "packageRules": [
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "enabled": true,
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "merge",
+      "automergeStrategy": "squash",
       "groupName": "all patch & minor dev dependencies"
     },
     {
-      "matchUpdateTypes": [
-        "patch"
-      ],
+      "enabled": true,
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["patch"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "merge",
+      "automergeStrategy": "squash",
       "groupName": "all patch app dependencies"
     },
     {
-      "matchDepTypes": [
-        "dependencies"
-      ],
-      "matchUpdateTypes": [
-        "minor"
-      ],
+      "enabled": true,
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor"],
       "minimumReleaseAge": "7 days",
       "automerge": false,
       "groupName": "all minor app dependencies"
     },
     {
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "minimumReleaseAge": "7 days",
+      "enabled": true,
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "minimumReleaseAge": "14 days",
       "automerge": false,
-      "groupName": "all major dependencies"
+      "groupName": "all major dev dependencies"
+    },
+    {
+      "enabled": true,
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
+      "minimumReleaseAge": "1 month",
+      "automerge": false,
+      "groupName": "all major app dependencies"
     }
   ]
 }
