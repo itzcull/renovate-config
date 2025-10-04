@@ -20,8 +20,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
-      "groupName": "all patch & minor dev dependencies",
-      "matchConfidence": "high"
+      "groupName": "all patch & minor dev dependencies"
     },
     {
       "enabled": true,
@@ -30,8 +29,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
-      "groupName": "all patch app dependencies",
-      "matchConfidence": "high"
+      "groupName": "all patch app dependencies"
     },
     {
       "enabled": true,
@@ -39,26 +37,23 @@
       "matchUpdateTypes": ["minor"],
       "minimumReleaseAge": "7 days",
       "automerge": false,
-      "groupName": "all minor app dependencies",
-      "matchConfidence": "high"
+      "groupName": "all minor app dependencies"
     },
     {
       "enabled": true,
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["major"],
-      "minimumReleaseAge": "14 days",
+      "minimumReleaseAge": "7 days",
       "automerge": false,
-      "groupName": "all major dev dependencies",
-      "matchConfidence": "high"
+      "groupName": "all major dev dependencies"
     },
     {
       "enabled": true,
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["major"],
-      "minimumReleaseAge": "1 month",
+      "minimumReleaseAge": "14 days",
       "automerge": false,
-      "groupName": "all major app dependencies",
-      "matchConfidence": "high"
+      "groupName": "all major app dependencies"
     }
   ],
   "timezone": "Australia/Melbourne"
