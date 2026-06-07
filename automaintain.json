@@ -1,64 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboarding": false,
-  "assignees": [
-    "itzcull"
-  ],
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended"],
   "dependencyDashboard": true,
   "minimumReleaseAge": "7 days",
-  "schedule": [
-    "* * */2 * *"
-  ],
+  "schedule": ["* * */2 * *"],
   "separateMajorMinor": true,
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
   "automergeType": "pr",
   "automergeStrategy": "squash",
   "platformAutomerge": true,
-  "rebaseWhen": "auto",
+  "rebaseWhen": "conflicted",
   "timezone": "Australia/Melbourne",
   "packageRules": [
     {
       "description": "Batch minor and patch dev dependency updates and automerge them",
-      "matchDepTypes": [
-        "devDependencies"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all minor and patch dev dependencies",
       "automerge": true
     },
     {
       "description": "Batch patch application dependency updates and automerge them",
-      "matchDepTypes": [
-        "dependencies"
-      ],
-      "matchUpdateTypes": [
-        "patch"
-      ],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["patch"],
       "groupName": "all patch application dependencies",
       "automerge": true
     },
     {
       "description": "Automerge minor application dependency updates individually",
-      "matchDepTypes": [
-        "dependencies"
-      ],
-      "matchUpdateTypes": [
-        "minor"
-      ],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor"],
       "automerge": true
     },
     {
       "description": "Keep major updates individual and manual",
-      "matchUpdateTypes": [
-        "major"
-      ],
+      "matchUpdateTypes": ["major"],
       "automerge": false
     }
   ]
