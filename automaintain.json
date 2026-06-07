@@ -1,44 +1,93 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboarding": false,
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "dependencyDashboard": true,
+  "osvVulnerabilityAlerts": true,
   "minimumReleaseAge": "7 days",
-  "schedule": ["* * */2 * *"],
+  "schedule": [
+    "* * * * 1,3,5"
+  ],
   "separateMajorMinor": true,
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
+  "ignoreTests": false,
   "automergeType": "pr",
   "automergeStrategy": "squash",
   "platformAutomerge": true,
   "rebaseWhen": "conflicted",
   "timezone": "Australia/Melbourne",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "* * * * 1"
+    ],
+    "automerge": false
+  },
   "packageRules": [
     {
       "description": "Batch minor and patch dev dependency updates and automerge them",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "groupName": "all minor and patch dev dependencies",
       "automerge": true
     },
     {
       "description": "Batch patch application dependency updates and automerge them",
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["patch"],
+      "matchDepTypes": [
+        "dependencies",
+        "optionalDependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "groupName": "all patch application dependencies",
-      "automerge": true,
-      "matchConfidence": "high"
+      "automerge": true
     },
     {
       "description": "Automerge minor application dependency updates individually",
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["minor"],
-      "automerge": true,
-      "matchConfidence": "high"
+      "matchDepTypes": [
+        "dependencies",
+        "optionalDependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "automerge": true
     },
     {
-      "description": "Keep major updates individual and manual",
-      "matchUpdateTypes": ["major"],
+      "description": "Automerge peer dependency patch updates individually",
+      "matchDepTypes": [
+        "peerDependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "description": "Keep peer dependency minor updates individual and manual",
+      "matchDepTypes": [
+        "peerDependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Require dashboard approval for major updates and keep them manual",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": true,
       "automerge": false
     }
   ]
