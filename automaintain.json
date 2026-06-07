@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "onboarding": false,
+  "assignees": [
+    "itzcull"
+  ],
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboard": true,
+  "minimumReleaseAge": "7 days",
+  "separateMajorMinor": true,
+  "separateMinorPatch": true,
+  "separateMultipleMajor": true,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "platformAutomerge": true,
+  "rebaseWhen": "auto",
+  "timezone": "Australia/Melbourne",
+  "packageRules": [
+    {
+      "description": "Batch patch updates and automerge them",
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "groupName": "all patch dependencies",
+      "automerge": true
+    },
+    {
+      "description": "Automerge minor updates individually",
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "automerge": true
+    },
+    {
+      "description": "Keep major updates individual and manual",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    }
+  ]
+}
