@@ -9,6 +9,9 @@
   ],
   "dependencyDashboard": true,
   "minimumReleaseAge": "7 days",
+  "schedule": [
+    "* * */2 * *"
+  ],
   "separateMajorMinor": true,
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
@@ -19,15 +22,33 @@
   "timezone": "Australia/Melbourne",
   "packageRules": [
     {
-      "description": "Batch patch updates and automerge them",
+      "description": "Batch minor and patch dev dependency updates and automerge them",
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "matchUpdateTypes": [
+        "minor",
         "patch"
       ],
-      "groupName": "all patch dependencies",
+      "groupName": "all minor and patch dev dependencies",
       "automerge": true
     },
     {
-      "description": "Automerge minor updates individually",
+      "description": "Batch patch application dependency updates and automerge them",
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "groupName": "all patch application dependencies",
+      "automerge": true
+    },
+    {
+      "description": "Automerge minor application dependency updates individually",
+      "matchDepTypes": [
+        "dependencies"
+      ],
       "matchUpdateTypes": [
         "minor"
       ],
