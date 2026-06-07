@@ -26,13 +26,15 @@
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["patch"],
       "groupName": "all patch application dependencies",
-      "automerge": true
+      "automerge": true,
+      "matchConfidence": "high"
     },
     {
       "description": "Automerge minor application dependency updates individually",
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["minor"],
-      "automerge": true
+      "automerge": true,
+      "matchConfidence": "high"
     },
     {
       "description": "Keep major updates individual and manual",
