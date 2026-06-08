@@ -5,6 +5,8 @@
     "config:recommended"
   ],
   "dependencyDashboard": true,
+  "prConcurrentLimit": 1,
+  "branchConcurrentLimit": 1,
   "osvVulnerabilityAlerts": true,
   "minimumReleaseAge": "7 days",
   "schedule": [
