@@ -10,7 +10,7 @@
   "osvVulnerabilityAlerts": true,
   "minimumReleaseAge": "7 days",
   "schedule": [
-    "* * * * 1,3,5"
+    "* * * * *"
   ],
   "separateMajorMinor": true,
   "separateMinorPatch": true,
